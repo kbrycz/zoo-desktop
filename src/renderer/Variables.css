@@ -1,0 +1,31 @@
+:root {
+    /* Main Colors */
+    --main: #2c3e50;
+    --light: #3e5871;
+    --medium: #1a252f;
+    --dark: #0e1419;
+    --header: #2f3640;
+    --text: rgba(47, 54, 64, .7);
+    --gray: rgba(47, 54, 64, .2);
+    --bright: #fceae3;
+  
+    /* Background */
+    --background: #ecf1f5;
+    --gradient1: #384f66;
+    --gradient2: #32475b;
+    --gradient3: #2c3e50;
+    --gradient4: #263545;
+    --gradient5: #202d3a;
+    --gradient6: #1a252f;
+  
+    /* Borders */
+    --light-border: rgba(44, 62, 80, .1);
+    --medium-border: rgba(44, 62, 80, .3);
+    --main-faded: rgba(44, 62, 80, .9);
+  
+    /* Other */
+    --error: #c23616;
+    --black: #000;
+    --white: #fff;
+  }
+  

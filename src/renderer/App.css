@@ -1,62 +1,96 @@
-/*
- * @NOTE: Prepend a `~` to css file paths that are in your node_modules
- *        See https://github.com/webpack-contrib/sass-loader#imports
- */
-body {
-  position: relative;
-  color: white;
-  height: 100vh;
-  background: linear-gradient(
-    200.96deg,
-    #fedc2a -29.09%,
-    #dd5789 51.77%,
-    #7a2c9e 129.35%
-  );
-  font-family: sans-serif;
-  overflow-y: hidden;
+/* Define QuickSand-Bold */
+@font-face {
+  font-family: 'QuickSand';
+  src: url('../../assets/fonts/Quicksand-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+/* Define QuickSand-Regular */
+@font-face {
+  font-family: 'QuickSand';
+  src: url('../../assets/fonts/Quicksand-Regular.ttf') format('truetype');
+  font-weight: normal;
+}
+
+/* Define QuickSand-SemiBold */
+@font-face {
+  font-family: 'QuickSand';
+  src: url('../../assets/fonts/Quicksand-SemiBold.ttf') format('truetype');
+  font-weight: 600; /* 600 is semi-bold */
+}
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden; /* Prevent scrolling */
+  font-family: 'QuickSand', sans-serif;
+  color: var(--white);
+}
+
+/* ... your existing styles ... */
+
+.app {
   display: flex;
-  justify-content: center;
+  background: var(--medium);
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 150px;
+  min-width: 100px; /* Reduced width */
+  background-color: var(--dark); /* Darkened color */
+  height: 100vh;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align the icons */
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+}
+
+.sidebar li {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.sidebar li a {
+  display: flex;
   align-items: center;
+  padding: 10px;
 }
 
-button {
-  background-color: white;
-  padding: 10px 20px;
-  border-radius: 10px;
-  border: none;
-  appearance: none;
-  font-size: 1.3rem;
-  box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
-    0px 18px 88px -4px rgba(24, 39, 75, 0.14);
-  transition: all ease-in 0.1s;
-  cursor: pointer;
-  opacity: 0.9;
+.icon {
+  margin-right: 8px;
 }
 
-button:hover {
-  transform: scale(1.05);
-  opacity: 1;
-}
-
-li {
-  list-style: none;
+.content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto; /* Enable scrolling if content is long */
 }
 
 a {
   text-decoration: none;
-  height: fit-content;
-  width: fit-content;
-  margin: 10px;
+  color: white;
+  transition: background-color 0.2s ease-in-out;
 }
 
 a:hover {
-  opacity: 1;
-  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
 }
 
-.Hello {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0;
+/* Add additional styling to make the icons bigger and centered */
+.icon {
+  font-size: 24px; /* Icon size */
+  width: 30px; /* Icon width */
+  text-align: center; /* Center icons */
 }
