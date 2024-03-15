@@ -1,21 +1,21 @@
 /* Define QuickSand-Bold */
 @font-face {
   font-family: 'QuickSand';
-  src: url('../../assets/fonts/Quicksand-Bold.ttf') format('truetype');
+  src: url('../../../assets/fonts/Quicksand-Bold.ttf') format('truetype');
   font-weight: bold;
 }
 
 /* Define QuickSand-Regular */
 @font-face {
   font-family: 'QuickSand';
-  src: url('../../assets/fonts/Quicksand-Regular.ttf') format('truetype');
+  src: url('../../../assets/fonts/Quicksand-Regular.ttf') format('truetype');
   font-weight: normal;
 }
 
 /* Define QuickSand-SemiBold */
 @font-face {
   font-family: 'QuickSand';
-  src: url('../../assets/fonts/Quicksand-SemiBold.ttf') format('truetype');
+  src: url('../../../assets/fonts/Quicksand-SemiBold.ttf') format('truetype');
   font-weight: 600; /* 600 is semi-bold */
 }
 
@@ -93,4 +93,10 @@ a:hover {
   font-size: 24px; /* Icon size */
   width: 30px; /* Icon width */
   text-align: center; /* Center icons */
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 40px;
 }
