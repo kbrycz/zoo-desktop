@@ -27,6 +27,26 @@ function EditPost({ post: initialPost, goBackToViewPosts }) {
           setLoading(false);
         }
       };
+
+  // Function to handle the delete action
+  const handleDelete = async () => {
+    const confirmDelete = window.confirm('Are you sure you want to delete this post?');
+    if (confirmDelete) {
+      setLoading(true);
+
+      try {
+        await server.delete(`/deletePost`, {
+          data: { postId: initialPost._id } // Note: Axios delete method sends data in the config object
+        });
+        alert('Post deleted successfully!');
+        goBackToViewPosts(); // Go back to view posts after deleting
+      } catch (err) {
+        alert('Failed to delete post: ' + err.message);
+      } finally {
+        setLoading(false);
+      }
+    }
+  };
     
 
   if (loading) {
@@ -85,6 +105,14 @@ function EditPost({ post: initialPost, goBackToViewPosts }) {
         <button type="submit" disabled={loading}>
           {loading ? 'Updating...' : 'Update Post'}
         </button>
+        <button
+        type="button" // Ensure this is type button to prevent form submission
+        className="delete-button"
+        onClick={handleDelete}
+        disabled={loading}
+      >
+        {loading ? 'Deleting...' : 'Delete Post'}
+      </button>
       </form>
     </div>
   );

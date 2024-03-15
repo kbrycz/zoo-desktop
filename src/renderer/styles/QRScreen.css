@@ -1,0 +1,18 @@
+/* QRScreen.css */
+.qr-screen {
+    max-width: 500px;
+    margin: 0 auto; /* Similar top margin as other screens */
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .qr-screen h1 {
+    margin-bottom: 2rem; /* Space below the title */
+  }
+  
+  .qr-message {
+    font-size: 1.2rem; /* Slightly larger text for the message */
+    margin-top: 20px; /* Additional space from title to message */
+  }
+  
+  
