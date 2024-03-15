@@ -1,7 +1,19 @@
-.post-screen {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
+  /* Back button as an arrow */
+  .back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px; /* Larger font size for icon */
+    color: var(--white); /* Same color as your buttons for consistency */
+    z-index: 10; /* Ensure it's above other elements */
+  }
+  
+  .back-button:before {
+    content: '←'; /* Unicode arrow symbol */
+    display: inline-block;
   }
   
   .post-form {
@@ -26,7 +38,7 @@
   .post-form input:focus,
   .post-form textarea:focus,
   .post-form select:focus {
-    border-color: #007bff;
+    border-color: var(--main);
     outline: none;
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
   }
@@ -38,7 +50,7 @@
   
   .post-form button {
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: var(--main);
     color: white;
     border: none;
     border-radius: 5px;
@@ -49,6 +61,9 @@
   
   .post-form button:hover,
   .post-form button:focus {
-    background-color: #0056b3;
+    background-color: var(--light);
   }
   
+  .post-screen h1 {
+    margin-top: 10vh; /* Space below the title */
+  }
