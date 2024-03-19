@@ -1,0 +1,85 @@
+.help-screen {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 20vh auto; /* Adjusted for vertical centering */
+    text-align: center;
+  }
+  
+  .help-buttons button {
+    background-color: var(--main);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 15px;
+    margin: 10px 0;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  .help-buttons button:hover,
+  .help-buttons button:focus {
+    background-color: var(--light);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: var(--white);
+    z-index: 10;
+  }
+  
+  .back-button:before {
+    content: '←';
+    display: inline-block;
+  }
+  
+  .ai-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .ai-question-input {
+    font-family: "QuickSand";
+    font-size: 16px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 150px; /* Adjust based on your preference */
+  }
+  
+  .ai-submit-button {
+    padding: 10px 20px;
+    background-color: var(--main); /* Your primary color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .ai-submit-button:hover,
+  .ai-submit-button:focus {
+    background-color: var(--light); /* A lighter shade of your primary color */
+  }
+  
+  .ai-answer {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9; /* Light background for the answer */
+    border-radius: 5px;
+    color: var(--main)
+  }
+  

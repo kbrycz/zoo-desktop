@@ -1,33 +1,31 @@
-// ScanScreen.js
 import React, { useState } from 'react';
 import QRScreen from '../components/QRScreen';
 import SearchScreen from '../components/SearchScreen';
+import ProfileScreen from '../components/ProfileScreen'; // Import ProfileScreen
 import '../styles/Scan.css';
 
-function ScanScreen({ goToProfileScreen }) {
+function ScanScreen() {
   const [currentScreen, setCurrentScreen] = useState('');
+  const [selectedUser, setSelectedUser] = useState(null); // State to hold selected user
 
   const handleBackClick = () => {
-    // This will now set currentScreen to empty string, showing the main Scan options
     setCurrentScreen('');
+    setSelectedUser(null); // Clear selected user when going back
+  };
+
+  const handleUserFound = (user) => {
+    setSelectedUser(user);
+    setCurrentScreen('profile'); // Navigate to ProfileScreen
   };
 
   const renderCurrentScreen = () => {
     switch (currentScreen) {
       case 'qr':
-        return (
-          <>
-            <button className="back-button" onClick={handleBackClick}>←</button>
-            <QRScreen />
-          </>
-        );
+        return <QRScreen />;
       case 'search':
-        return (
-          <>
-            <button className="back-button" onClick={handleBackClick}>←</button>
-            <SearchScreen />
-          </>
-        );
+        return <SearchScreen onUserFound={handleUserFound} />;
+      case 'profile':
+        return selectedUser && <ProfileScreen user={selectedUser} />;
       default:
         return (
           <>
@@ -43,6 +41,7 @@ function ScanScreen({ goToProfileScreen }) {
 
   return (
     <div className="scan-screen">
+      {currentScreen !== '' && <button className="back-button" onClick={handleBackClick}></button>}
       {renderCurrentScreen()}
     </div>
   );

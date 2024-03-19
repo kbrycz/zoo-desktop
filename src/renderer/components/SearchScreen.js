@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../styles/SearchScreen.css';
 import server from '../../api/server';
 
-function SearchScreen() {
+function SearchScreen({onUserFound}) {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -63,6 +63,11 @@ function SearchScreen() {
   
       // Log the search results
       console.log(response.data);
+      if (response.data.user) {
+        onUserFound(response.data.user); // Use the passed function to update the state in ScanScreen
+      } else {
+        console.log('No matching user found or multiple users returned.');
+      }
   
     } catch (error) {
       console.error('Search failed:', error);
