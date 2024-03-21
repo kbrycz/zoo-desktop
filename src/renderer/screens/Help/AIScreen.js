@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import server from '../../../api/server'; // Make sure this import path is correct
-import '../../styles/Help/HelpScreen.css';
+import server from '../../../api/server';
+import '../../styles/Help/AIScreen.css';
+
 function AIScreen() {
   const [question, setQuestion] = useState('');
   const [answer, setAnswer] = useState('');
@@ -24,22 +25,24 @@ function AIScreen() {
   };
 
   return (
-    <div className="help-screen">
+    <div className="ai-screen">
       <h1>AI Support</h1>
       <p>Type your question below and get an instant AI-powered answer.</p>
-      <form onSubmit={handleSubmit} className="ai-form">
-        <textarea 
-          className="ai-question-input"
-          onChange={handleQuestionChange}
-          value={question}
-          placeholder="Ask me anything..."
-          disabled={loading}
-        />
-        <button type="submit" className="ai-submit-button" disabled={loading}>
-          {loading ? 'Getting your answer...' : 'Submit'}
-        </button>
-      </form>
-      {answer && <div className="ai-answer">{answer}</div>}
+      <div className="ai-container">
+        <form onSubmit={handleSubmit} className="ai-form">
+          <textarea
+            className="ai-question-input"
+            onChange={handleQuestionChange}
+            value={question}
+            placeholder="Ask me anything..."
+            disabled={loading}
+          />
+          <button type="submit" className="ai-submit-button" disabled={loading || !question}>
+            {loading ? 'Getting your answer...' : 'Submit'}
+          </button>
+        </form>
+        {answer && <div className="ai-answer">{answer}</div>}
+      </div>
     </div>
   );
 }

@@ -1,0 +1,109 @@
+.ai-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  .ai-screen h1{
+    margin-bottom: 10px;
+  }
+  
+  .ai-container {
+    background-color: var(--background); /* Make sure this variable is correctly defined */
+    padding: 20px 40px; /* Increased padding for better spacing */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    width: 150%; /* Adjusted to 100% to fit within the viewport properly */
+    margin-top: 20px;
+  }
+  
+  .ai-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .ai-question-input {
+    font-size: 1rem;
+    width: 95%; /* Adjusted to full width for consistency */
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 150px;
+    resize: none; /* Prevents resizing */
+    font-family: "QuickSand";
+  }
+  
+  .ai-submit-button {
+    padding: 10px 20px;
+    background-color: var(--main); /* Ensure this color variable is defined */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease-in-out;
+    width: auto; /* Keep width auto for button to fit content */
+  }
+  
+  .ai-submit-button:hover,
+  .ai-submit-button:focus {
+    background-color: var(--light); /* Ensure this color variable is defined */
+  }
+  
+  .ai-submit-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .ai-answer {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    color: var(--header); /* Ensure this color variable is defined */
+    font-family: "QuickSand";
+    line-height: 25px;
+  }
+  
+  /* Adjustments for smaller screens */
+  @media (max-width: 1200px) {
+    .ai-container {
+      padding: 20px; /* Reduced padding for smaller screens */
+      width: 150%; /* Corrected for consistent sizing */
+    }
+  }
+
+  /* Adjustments for smaller screens */
+  @media (max-width: 768px) {
+    .ai-container {
+      padding: 20px; /* Reduced padding for smaller screens */
+      width: 90%; /* Corrected for consistent sizing */
+    }
+    .ai-screen h1  {
+        font-size: 3rem;
+    }
+    .ai-question-input {
+        width: 92.5%; /* Adjusted to full width for consistency */
+      }
+
+  }
+  
+  @media (max-width: 480px) {
+    .ai-container {
+      padding: 10px; /* Further adjust padding for very small screens */
+    }
+
+    .ai-screen h1  {
+        font-size: 2rem;
+    }
+    .ai-question-input {
+        width: 85%; /* Adjusted to full width for consistency */
+      }
+
+    .ai-question-input, .ai-submit-button {
+      font-size: 0.9rem; /* Adjust font size for better readability on small devices */
+    }
+  }
+  

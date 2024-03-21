@@ -1,0 +1,76 @@
+.faq-screen {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .faq-container {
+    background-color: var(--background);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px 40px;
+    max-width: 800px;
+    width: 200%; /* Corrected for consistent sizing */
+    margin-top: 20px;
+    height: auto; /* Adjusted for more responsive behavior */
+    max-height: 500px; /* Use max-height for flexibility */
+    overflow-y: auto;
+  }
+  
+  .faq {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .faq:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  
+  .faq h2 {
+    color: #333;
+    margin: 0 0 10px 0;
+  }
+  
+  .faq p {
+    color: #666;
+    margin: 0;
+  }
+  
+  /* Adjustments for smaller screens */
+  @media (max-width: 1200px) {
+    .faq-container {
+      padding: 20px; /* Reduced padding for smaller screens */
+      width: 150%; /* Corrected for consistent sizing */
+    }
+  }
+
+  /* Adjustments for smaller screens */
+  @media (max-width: 768px) {
+    .faq-container {
+      padding: 20px; /* Reduced padding for smaller screens */
+      width: 90%; /* Corrected for consistent sizing */
+    }
+    .faq-screen h1  {
+        font-size: 3rem;
+    }
+  }
+  
+  /* Further adjustments for very small screens */
+  @media (max-width: 480px) {
+    .faq-container {
+      padding: 10px; /* Further reduced padding for very small screens */
+    }
+    .faq-screen h1  {
+        font-size: 2rem;
+    }
+  
+    .faq h2, .faq p {
+      margin: 10px; /* Slightly adjust margins for compact layout */
+    }
+  }
+  

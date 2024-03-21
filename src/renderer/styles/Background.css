@@ -55,7 +55,13 @@
     left: 0;
     margin-left: 30px;
     margin-top: 30px;
+    color: var(--white);
+    background: none; /* Removes the default background */
+    border: none; /* Removes the default border */
+    cursor: pointer; /* Ensures the cursor changes to a pointer on hover */
+    font-size: 24px; /* Adjust size as needed */
   }
+  
   
   /* Responsive adjustments for small screens */
   @media (max-width: 480px) {

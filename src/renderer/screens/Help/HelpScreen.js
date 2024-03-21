@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import FAQScreen from './FAQScreen';
 import AIScreen from './AIScreen';
 import '../../styles/Help/HelpScreen.css';
+import '../../styles/Background.css';
 
 function HelpScreen() {
   const [currentScreen, setCurrentScreen] = useState('');
@@ -26,11 +27,15 @@ function HelpScreen() {
   };
 
   return (
-    <div className="help-screen">
+    <div className='background-screen'>
       {currentScreen !== '' && (
-        <button className="back-button" onClick={() => setCurrentScreen('')}></button>
+        <button className="back-button" onClick={() => setCurrentScreen('')}>
+          ←
+        </button>
       )}
-      {renderScreen()}
+      <div className="help-screen">
+        {renderScreen()}
+      </div>
     </div>
   );
 }
