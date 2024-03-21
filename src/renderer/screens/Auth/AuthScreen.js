@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import server from '../../../api/server';
-import '../../styles/Auth/AuthBackground.css';
+import '../../styles/Background.css';
 import '../../styles/Auth/AuthScreen.css';
 import { version } from '../../../global/Version';
 
 function AuthScreen() {
   const [phone, setPhone] = useState('');
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handlePhoneChange = (event) => {
     const formattedPhoneNumber = formatPhoneNumber(event.target.value);
     setPhone(formattedPhoneNumber);
+    setError("")
   };
 
   const handlePhoneSubmit = async (e) => {
@@ -23,6 +25,7 @@ function AuthScreen() {
       navigate('/verify', { state: { phone: unformatPhoneNumber(phone) } });
     } catch (error) {
       console.error('Verification initiation failed:', error);
+      setError('Verification initiation failed. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -40,11 +43,12 @@ function AuthScreen() {
   };
 
   const unformatPhoneNumber = (value) => {
-    return value.replace(/[^\d]/g, '');
+    value = value.replace(/[^\d]/g, '')
+    return "+1" + value
   };
 
   return (
-    <div className="welcome-screen">
+  <div className="background-screen welcome-screen">
       <button className='back-button' onClick={() => navigate('/welcome')}></button>
       <h1>Sign in</h1>
       <h2>You will receive a text for verification</h2>
@@ -57,8 +61,9 @@ function AuthScreen() {
           disabled={loading}
           maxLength={14} // Maximum length for the formatted phone number
         />
-        <button type="submit" disabled={loading || phone.length < 14}>Send Verification Code</button>
+        <button className='submit-button' type="submit" disabled={loading || phone.length < 14}>Send Verification Code</button>
       </form>
+      {error && <div className="form-error">{error}</div>}
       <div className="version-number">
         <p>Version {version}</p>
       </div>

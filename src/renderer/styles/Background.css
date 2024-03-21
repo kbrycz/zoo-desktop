@@ -1,4 +1,4 @@
-.welcome-screen {
+.background-screen {
     position: relative;
     height: 100vh;
     display: flex;
@@ -10,43 +10,32 @@
     overflow: hidden;
   }
   
-  .welcome-screen::before {
+  .background-screen::before {
     content: '';
     position: absolute;
     top: -10px;
     left: -10px;
     right: -10px;
     bottom: -10px;
-    background-image: url('../../../../assets/background.jpg');
+    background-image: url('../../../assets/background.jpg');
     background-size: cover;
     background-position: center;
     filter: blur(5px) brightness(40%);
     z-index: 0;
     background-color: rgba(0, 0, 0, 0.6);
   }
-  
-  .welcome-screen-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .welcome-screen-buttons button {
-    padding: 20px 30px;
-    background-color: var(--main);
-    color: white;
-    border: none;
+
+  .form-error {
+    position: relative;
+    color: var(--error); /* Light red color for the error message */
     border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.2s ease-in-out;
-    font-weight: 600;
-    width: auto;
-  }
-  
-  .welcome-screen-buttons button:hover,
-  .welcome-screen-buttons button:focus {
-    background-color: var(--light);
+    padding: 10px;
+    margin-top: 20px; /* Spacing between the form and the error message */
+    text-align: center;
+    width: 90%; /* Adjust based on your design needs */
+    max-width: 400px; /* Ensure it doesn't stretch too wide on larger screens */
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
   }
   
   .version-number p {
@@ -60,7 +49,7 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
   }
 
-  .welcome-screen .back-button {
+  .background-screen .back-button {
     position: absolute;
     top: 0;
     left: 0;
@@ -70,15 +59,7 @@
   
   /* Responsive adjustments for small screens */
   @media (max-width: 480px) {
-    .welcome-screen-buttons {
-        gap: 10px;
-    }
-    .welcome-screen-buttons button {
-      padding: 20px; 
-      font-size: 0.8rem;
-    }
-  
-    .welcome-screen::before {
+    .background-screen::before {
       top: -5px;
       left: -5px;
       right: -5px;

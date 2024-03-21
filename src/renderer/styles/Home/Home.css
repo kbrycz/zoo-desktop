@@ -1,0 +1,64 @@
+.home-screen h1 {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 10px;
+    font-size: 3.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  }
+  
+  .home-screen h2 {
+    position: relative;
+    margin-bottom: 40px;
+    font-size: 1.75em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    font-weight: 600;
+  }
+  
+  .home-screen .website-link {
+    position: relative;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: normal;
+  }
+  
+  .home-screen .zoo-logo {
+    position: relative;
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 100%;
+    height: auto;
+    max-height: 150px;
+  }
+  
+  /* Adjustments for smaller screens */
+  @media (max-width: 768px) {
+    .home-screen h1 {
+      font-size: 2.5em; /* Smaller font size for h1 */
+    }
+  
+    .home-screen h2 {
+      font-size: 1.25em; /* Smaller font size for h2 */
+      margin-bottom: 20px; /* Less space below h2 */
+    }
+  
+    .home-screen .zoo-logo {
+      max-height: 100px; /* Smaller logo for smaller screens */
+    }
+  }
+  
+  /* Further adjustments for very small screens */
+  @media (max-width: 480px) {
+    .home-screen h1 {
+      font-size: 2em; /* Even smaller font size for h1 */
+    }
+  
+    .home-screen h2 {
+      font-size: 1em; /* Even smaller font size for h2 */
+      margin-bottom: 15px; /* Even less space below h2 */
+    }
+  
+    .home-screen .zoo-logo {
+      max-height: 80px; /* Even smaller logo for very small screens */
+    }
+  }
+  

@@ -12,11 +12,37 @@
 
 .welcome-screen h2 {
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   font-size: 1.75em;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
   font-weight: 600;
 }
+
+  .welcome-screen-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .welcome-screen-buttons button {
+    padding: 20px 30px;
+    background-color: var(--main);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease-in-out;
+    font-weight: 600;
+    width: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Basic box shadow */
+  }
+  
+  
+  .welcome-screen-buttons button:hover,
+  .welcome-screen-buttons button:focus {
+    background-color: var(--light);
+  }
 
 @media (max-width: 768px) {
   .welcome-screen h1 {
@@ -36,4 +62,11 @@
     font-size: 1em;
     margin-bottom: 30px;
   }
+  .background-screen-buttons {
+    gap: 10px;
+    }
+    .background-screen-buttons button {
+    padding: 20px; 
+    font-size: 0.8rem;
+    }
 }
