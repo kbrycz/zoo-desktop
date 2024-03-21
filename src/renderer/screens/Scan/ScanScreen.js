@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import QRScreen from '../components/QRScreen';
-import SearchScreen from '../components/SearchScreen';
-import ProfileScreen from '../components/ProfileScreen'; // Import ProfileScreen
-import '../styles/Scan.css';
+import QRScreen from './QRScreen';
+import SearchScreen from './SearchScreen';
+import ProfileScreen from './ProfileScreen'; // Import ProfileScreen
+import '../../styles/Scan/Scan.css';
 
 function ScanScreen() {
   const [currentScreen, setCurrentScreen] = useState('');

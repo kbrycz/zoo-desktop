@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import server from '../../api/server'; // Make sure this import path is correct
-import '../styles/HelpScreen.css'; // Reusing HelpScreen styles for consistency
-
+import server from '../../../api/server'; // Make sure this import path is correct
+import '../../styles/Help/HelpScreen.css';
 function AIScreen() {
   const [question, setQuestion] = useState('');
   const [answer, setAnswer] = useState('');

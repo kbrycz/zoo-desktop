@@ -1,0 +1,50 @@
+
+.sidebar {
+    width: 150px;
+    min-width: 100px; /* Reduced width */
+    background-color: var(--dark); /* Darkened color */
+    height: 100vh;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align the icons */
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+  }
+  
+  .sidebar li {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .sidebar li a {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .icon {
+    margin-right: 8px;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+  }
+  
+  /* Add additional styling to make the icons bigger and centered */
+  .icon {
+    font-size: 24px; /* Icon size */
+    width: 30px; /* Icon width */
+    text-align: center; /* Center icons */
+  }

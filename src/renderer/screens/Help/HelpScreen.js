@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import FAQScreen from '../components/FAQScreen';
-import AIScreen from '../components/AIScreen';
-import '../styles/HelpScreen.css';
+import FAQScreen from './FAQScreen';
+import AIScreen from './AIScreen';
+import '../../styles/Help/HelpScreen.css';
 
 function HelpScreen() {
   const [currentScreen, setCurrentScreen] = useState('');

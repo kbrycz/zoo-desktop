@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import '../styles/SearchScreen.css';
-import server from '../../api/server';
+import '../../styles/Scan/SearchScreen.css';
+import server from '../../../api/server';
 
 function SearchScreen({onUserFound}) {
     const [firstName, setFirstName] = useState('');

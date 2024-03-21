@@ -1,7 +1,7 @@
 // EditPost.js
 import React, { useState, useEffect } from 'react';
-import server from '../../api/server'; // Adjust the path as necessary
-import '../styles/CreatePosts.css'; // Reuse CreatePost styles
+import server from '../../../api/server'; // Adjust the path as necessary
+import '../../styles/Post/CreatePosts.css'; // Reuse CreatePost styles
 
 function EditPost({ post: initialPost, goBackToViewPosts }) {
     const [post, setPost] = useState({

@@ -1,0 +1,39 @@
+.welcome-screen h1,
+.welcome-screen button {
+  position: relative;
+  z-index: 1;
+}
+
+.welcome-screen h1 {
+  margin-bottom: 10px;
+  font-size: 3.5em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.welcome-screen h2 {
+  position: relative;
+  margin-bottom: 40px;
+  font-size: 1.75em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .welcome-screen h1 {
+    font-size: 3em;
+  }
+  .welcome-screen h2 {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-screen h1 {
+    font-size: 2em;
+    margin-bottom: 5px;
+  }
+  .welcome-screen h2 {
+    font-size: 1em;
+    margin-bottom: 30px;
+  }
+}

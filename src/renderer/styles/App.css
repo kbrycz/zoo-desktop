@@ -27,76 +27,16 @@ html, body {
   width: 100%;
   overflow: hidden; /* Prevent scrolling */
   font-family: 'QuickSand', sans-serif;
-  color: var(--white);
+  color: var(--text);
 }
-
-/* ... your existing styles ... */
 
 .app {
   display: flex;
-  background: var(--medium);
-  height: 100vh;
+  background: var(--white);
   overflow: hidden;
-}
-
-.sidebar {
-  width: 150px;
-  min-width: 100px; /* Reduced width */
-  background-color: var(--dark); /* Darkened color */
-  height: 100vh;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center align the icons */
-}
-
-.sidebar ul {
-  list-style-type: none;
-  padding: 0;
-  width: 100%;
-}
-
-.sidebar li {
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-.sidebar li a {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-}
-
-.icon {
-  margin-right: 8px;
 }
 
 .content {
   flex: 1;
-  padding: 20px;
   overflow-y: auto; /* Enable scrolling if content is long */
-}
-
-a {
-  text-decoration: none;
-  color: white;
-  transition: background-color 0.2s ease-in-out;
-}
-
-a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-}
-
-/* Add additional styling to make the icons bigger and centered */
-.icon {
-  font-size: 24px; /* Icon size */
-  width: 30px; /* Icon width */
-  text-align: center; /* Center icons */
-}
-
-h3 {
-  font-weight: 400;
-  font-size: 14px;
-  margin-bottom: 40px;
 }

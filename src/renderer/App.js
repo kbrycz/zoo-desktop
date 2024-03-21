@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom';
 import { FaHome, FaCog, FaSearch, FaEdit, FaPaw, FaQuestionCircle } from 'react-icons/fa';
-import HomeScreen from './screens/HomeScreen';
-import SettingsScreen from './screens/SettingsScreen';
-import ScanScreen from './screens/ScanScreen';
-import PostScreen from './screens/PostScreen';
-import HelpScreen from './screens/HelpScreen';
-import WelcomeScreen from './screens/WelcomeScreen';
-import AuthScreen from './screens/AuthScreen';
-import VerifyScreen from './screens/VerifyScreen';
+import HomeScreen from './screens/Home/HomeScreen';
+import SettingsScreen from './screens/Settings/SettingsScreen';
+import ScanScreen from './screens/Scan/ScanScreen';
+import PostScreen from './screens/Post/PostScreen';
+import HelpScreen from './screens/Help/HelpScreen';
+import WelcomeScreen from './screens/Auth/WelcomeScreen';
+import AuthScreen from './screens/Auth/AuthScreen';
+import VerifyScreen from './screens/Auth/VerifyScreen';
 import './styles/Variables.css';
 import './styles/App.css';
+import './styles/Sidebar.css'
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);

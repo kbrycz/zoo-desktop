@@ -1,9 +1,9 @@
 // PostScreen.js
 import React, { useState } from 'react';
-import CreatePost from '../components/CreatePost';
-import ViewPosts from '../components/ViewPosts';
-import EditPost from '../components/EditPost'; // Import EditPost component
-import '../styles/Post.css';
+import CreatePost from './CreatePost';
+import ViewPosts from './ViewPosts';
+import EditPost from './EditPost'; // Import EditPost component
+import '../../styles/Post/Post.css';
 
 function PostScreen() {
   const [currentScreen, setCurrentScreen] = useState('');

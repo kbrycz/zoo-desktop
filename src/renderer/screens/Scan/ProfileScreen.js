@@ -1,6 +1,6 @@
 import React from 'react';
-import defaultImage from '../../../assets/default.jpg'; // Ensure this path is correct
-import '../styles/ProfileScreen.css'; // Assuming you'll create or have this CSS file
+import defaultImage from '../../../../assets/default.jpg'; // Ensure this path is correct
+import '../../styles/Scan/ProfileScreen.css'; // Assuming you'll create or have this CSS file
 
 function ProfileScreen({ user }) {
   const formatDate = (dateString) => {

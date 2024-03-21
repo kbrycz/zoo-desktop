@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import server from '../../api/server'; // Adjust the import path as needed
+import server from '../../../api/server'; // Adjust the import path as needed
 
 function VerifyScreen({login}) {
   const [code, setCode] = useState('');

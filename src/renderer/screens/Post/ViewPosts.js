@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import server from '../../api/server'; // Adjust the path as necessary
-import '../styles/ViewPosts.css'; // Make sure the path is correct
+import server from '../../../api/server'; // Adjust the path as necessary
+import '../../styles/Post/ViewPosts.css'; // Make sure the path is correct
 
 function ViewPosts({onEditPost}) {
   const [posts, setPosts] = useState([]);

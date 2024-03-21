@@ -1,6 +1,6 @@
 // QRScreen.js
 import React, { useState, useEffect } from 'react';
-import '../styles/QRScreen.css';
+import '../../styles/Scan/QRScreen.css';
 
 function QRScreen() {
   const [isListening, setIsListening] = useState(false);

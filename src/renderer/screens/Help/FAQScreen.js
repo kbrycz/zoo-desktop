@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/HelpScreen.css'; // Assuming you can use similar styles
+import '../../styles/Help/HelpScreen.css'; // Assuming you can use similar styles
 
 function FAQScreen() {
   return (

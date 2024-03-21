@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import server from '../../api/server'; // Import the server instance
-import '../styles/CreatePosts.css';
+import server from '../../../api/server'; // Import the server instance
+import '../../styles/Post/CreatePosts.css';
 
 function CreatePost() {
   const [post, setPost] = useState({
