@@ -1,34 +1,95 @@
-.post-screen {
-    position: relative;
-    width: 100%; /* take full width */
-    max-width: 500px;
-    margin: 2rem auto; /* Adjusted to give more space on the top */
-    text-align: center; /* Center the title */
-  }
-  
-  .post-screen-buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .post-screen-buttons button {
-    background-color: var(--main);
-    color: #fff;
-    border: none;
-    border-radius: 20px; /* Rounded corners */
-    padding: 10px 15px;
-    margin: 10px 0; /* Space between buttons */
-    width: 80%; /* Button width */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    cursor: pointer;
-    font-size: 16px;
-    transition: all 0.3s ease;
-  }
-  
-  .post-screen-buttons button:hover,
-  .post-screen-buttons button:focus {
-    background-color: var(--light);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  }
-  
+.create-post-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.create-post-screen h1 {
+  margin-bottom: 10px;
+}
+.create-post-screen h3 {
+  margin-bottom: 30px;
+
+}
+
+.form-container {
+  background-color: #fff; /* White background for the form */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  max-width: 500px; /* Adjust based on your preference */
+  width: 100%; /* Full width on smaller screens */
+  margin-top: 20px; /* Space from title and subtitle */
+}
+
+.post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: black; /* Ensure all text in the form is black for readability */
+}
+
+.post-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: black; /* Explicitly setting label color */
+}
+
+.post-form input,
+.post-form textarea,
+.post-form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: black; /* Text color for inputs */
+  background-color: #fff; /* Ensuring background is white for contrast */
+}
+
+.post-form input:focus,
+.post-form textarea:focus,
+.post-form select:focus {
+  border-color: var(--main);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.post-form textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.post-form button {
+  padding: 10px 20px;
+  background-color: var(--main);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.post-form button:hover,
+.post-form button:focus {
+  background-color: var(--light);
+}
+
+.loading-indicator {
+  color: black; /* If you have a specific loading indicator, ensure it's visible against the background */
+}
+
+.ai-response {
+  margin: 20px 0;
+  background-color: #f0f0f0; /* Light grey background for visibility */
+  border: 1px solid #ccc; /* Subtle border */
+  border-radius: 5px; /* Match other inputs */
+  padding: 10px; /* Consistent padding */
+  color: black; /* Ensure readability */
+  font-family: "QuickSand"; /* Consistent font */
+}
+
+.post-form button:disabled {
+  background-color: #ccc; /* Greyed out */
+  cursor: not-allowed;
+}

@@ -4,6 +4,7 @@ import CreatePost from './CreatePost';
 import ViewPosts from './ViewPosts';
 import EditPost from './EditPost'; // Import EditPost component
 import '../../styles/Post/Post.css';
+import '../../styles/Background.css';
 
 function PostScreen() {
   const [currentScreen, setCurrentScreen] = useState('');
@@ -29,11 +30,17 @@ function PostScreen() {
   };
 
   return (
-    <div className="post-screen">
+    <div className='background-screen'>
+      {currentScreen !== '' && (
+        <button className="back-button" onClick={handleBackClick}>
+          ←
+        </button>
+      )}
+      <div className="post-screen">
       {showOptions ? (
         <>
           <h1>Posts</h1>
-          <div className="post-screen-buttons">
+          <div className="post-screen-buttons screen-buttons">
             <button onClick={() => { setCurrentScreen('create'); setShowOptions(false); }}>Create Post</button>
             <button onClick={() => { setCurrentScreen('view'); setShowOptions(false); }}>View Posts</button>
           </div>
@@ -45,9 +52,9 @@ function PostScreen() {
           {currentScreen === 'edit' && currentPost && (
             <EditPost post={currentPost} goBackToViewPosts={() => setCurrentScreen('view')} />
           )}
-          <button className="back-button" onClick={handleBackClick}></button>
         </>
       )}
+    </div>
     </div>
   );
 }

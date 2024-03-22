@@ -15,10 +15,12 @@ import './styles/Sidebar.css'
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [loading, setLoading] = useState(true); // Added loading state
 
   useEffect(() => {
     const token = localStorage.getItem('userToken');
     setIsAuthenticated(!!token);
+    setLoading(false); // Set loading to false after checking token
   }, []);
 
   const login = (token) => {
@@ -26,10 +28,14 @@ function App() {
     setIsAuthenticated(true);
   };
 
-  const logout = (token) => {
-    localStorage.removeItem('userToken', token);
+  const logout = () => {
+    localStorage.removeItem('userToken');
     setIsAuthenticated(false);
   };
+
+  if (loading) {
+    return <div>Loading...</div>; // Or any other loading indicator
+  }
 
   const Sidebar = () => (
     <nav className="sidebar">
@@ -59,10 +65,10 @@ function App() {
         {isAuthenticated && <Sidebar />}
         <div className="content">
           <Routes>
+            <Route path="/home" element={isAuthenticated ? <HomeScreen /> : <Navigate to="/welcome" />} />
             <Route path="/welcome" element={<WelcomeScreen />} />
             <Route path="/auth" element={<AuthScreen />} />
             <Route path="/verify" element={<VerifyScreen login={login}/>} />
-            <Route path="/home" element={isAuthenticated ? <HomeScreen /> : <Navigate to="/welcome" />} />
             <Route path="/scan" element={isAuthenticated ? <ScanScreen /> : <Navigate to="/welcome" />} />
             <Route path="/post" element={isAuthenticated ? <PostScreen /> : <Navigate to="/welcome" />} />
             <Route path="/help" element={isAuthenticated ? <HelpScreen /> : <Navigate to="/welcome" />} />

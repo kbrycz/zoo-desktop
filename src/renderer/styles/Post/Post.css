@@ -1,69 +1,15 @@
-  /* Back button as an arrow */
-  .post-screen .back-button {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 24px; /* Larger font size for icon */
-    color: var(--white); /* Same color as your buttons for consistency */
-    z-index: 10; /* Ensure it's above other elements */
+.post-screen {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 10vh auto; /* Reduced vertical margin for smaller screens */
+  text-align: center;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .post-screen {
+    margin: 5vh auto; /* Smaller vertical margin */
+    max-width: 90%; /* Increase max-width for better screen utilization */
   }
-  
-  .post-screen .back-button:before {
-    content: '←'; /* Unicode arrow symbol */
-    display: inline-block;
-  }
-  
-  .post-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .post-form label {
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .post-form input,
-  .post-form textarea,
-  .post-form select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .post-form input:focus,
-  .post-form textarea:focus,
-  .post-form select:focus {
-    border-color: var(--main);
-    outline: none;
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
-  }
-  
-  .post-form textarea {
-    height: 100px;
-    resize: vertical;
-  }
-  
-  .post-form button {
-    padding: 10px 20px;
-    background-color: var(--main);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.2s ease-in-out;
-  }
-  
-  .post-form button:hover,
-  .post-form button:focus {
-    background-color: var(--light);
-  }
-  
-  .post-screen h1 {
-    margin-top: 10vh; /* Space below the title */
-  }
+}

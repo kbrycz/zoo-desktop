@@ -1,3 +1,8 @@
+h1 {
+  margin-bottom: 30px;
+  font-size: 2.5em; /* Reduced font size for smaller screens */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
 .background-screen {
     position: relative;
     height: 100vh;
@@ -61,7 +66,39 @@
     cursor: pointer; /* Ensures the cursor changes to a pointer on hover */
     font-size: 24px; /* Adjust size as needed */
   }
+
+  .screen-buttons button {
+    background-color: var(--main);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin: 10px 0;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
   
+  .screen-buttons button:hover,
+  .screen-buttons button:focus {
+    background-color: var(--light);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+    /* Adjustments for smaller screens */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2em; /* Further reduced font size */
+    }
+
+    .screen-buttons button {
+      font-size: 14px; /* Slightly smaller font size */
+      padding: 8px 12px; /* Adjust padding */
+      width: 100%; /* Full width buttons for smaller screens */
+    }
+  }
   
   /* Responsive adjustments for small screens */
   @media (max-width: 480px) {
@@ -76,6 +113,14 @@
       margin-bottom: 20px;
       margin-right: 20px;
       font-size: 0.8em;
+    }
+    h1 {
+      font-size: 1.75em; /* Even smaller font size for very small screens */
+    }
+  
+    .screen-buttons button {
+      font-size: 13px; /* Even smaller font size */
+      padding: 8px 10px; /* Smaller padding */
     }
   }
   

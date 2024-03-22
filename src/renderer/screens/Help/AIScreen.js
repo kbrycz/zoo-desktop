@@ -12,10 +12,11 @@ function AIScreen() {
   };
 
   const handleSubmit = async (e) => {
+    setAnswer("")
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await server.get('/ask', { params: { question } });
+      const response = await server.get('/getHelp', { params: { question } });
       setAnswer(response.data.answer);
     } catch (error) {
       console.error('Error fetching AI answer:', error);

@@ -17,7 +17,7 @@ function HelpScreen() {
         return (
           <>
             <h1>Help & Support</h1>
-            <div className="help-buttons">
+            <div className="help-buttons screen-buttons">
               <button onClick={() => setCurrentScreen('faq')}>FAQ</button>
               <button onClick={() => setCurrentScreen('ai')}>AI Support</button>
             </div>
