@@ -3,7 +3,6 @@
 }
 .create-post-screen h3 {
   margin-bottom: 30px;
-
 }
 
 .create-post-screen {
@@ -77,6 +76,30 @@
 .post-form button:focus {
   background-color: var(--light);
 }
+
+.delete-button button {
+  padding: 10px 20px;
+  background-color: var(--error); /* Use your --error color variable */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease-in-out, filter 0.2s ease-in-out; /* Include filter in the transition */
+  width: 100%;
+}
+
+.delete-button button:hover,
+.delete-button button:focus {
+  background-color: var(--error); /* Use your --error color variable */
+  filter: brightness(1.2); /* Lighten the button on hover/focus by increasing brightness */
+}
+
+.delete-button button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
 
 .loading-indicator {
   color: black; /* If you have a specific loading indicator, ensure it's visible against the background */

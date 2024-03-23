@@ -1,6 +1,7 @@
   .loading-indicator {
     text-align: center;
     margin-top: 50px;
+    color:#fff;
   }
   
   .posts-list {
@@ -11,7 +12,7 @@
   .post-item {
     background: #fff;
     margin-bottom: 20px;
-    padding: 15px;
+    padding: 15px 50px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
@@ -22,27 +23,23 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 12px;
+
   }
   
   .post-title {
-    font-weight: bold;
     font-size: 1.5em;
     color: var(--dark);
+    font-family: "QuickSand";
+    font-weight: bold;
   }
   
   .post-description {
     font-size: 1em;
     color: #333;
     margin-bottom: 10px;
-  }
-  
-  .post-link a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  .post-link a:hover {
-    text-decoration: underline;
+    font-family: "QuickSand";
+    font-weight: normal;
+    text-align: left;
   }
   
   .post-footer {
@@ -53,23 +50,83 @@
   
   .post-type {
     font-style: italic;
-    color: #007bff;
+    color: var(--main);
   }
   
   .post-date {
     font-size: 0.9em;
-    color: #666;
+    font-style: italic;
+    color: var(--main);
   }
   
   .edit-button {
-    background: #f0f0f0;
+    background-color: var(--main);
+    color: var(--white);
     border: 1px solid #ccc;
-    padding: 5px 10px;
+    padding: 10px 15px;
     font-size: 0.9em;
     cursor: pointer;
     border-radius: 5px;
+    transition: background-color 0.2s ease-in-out;
   }
   
   .edit-button:hover {
-    background: #e1e1e1;
+    background-color: var(--light);
   }
+
+  .form-container {
+    background-color: var(--background);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 150%;
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 60vh; /* Max height to ensure it's within the viewport */
+    position: relative; /* Needed for centering */
+  }
+  .view-posts-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* This centers its children (including .form-container) horizontally */
+    padding: 20px;
+    width: 100%; /* Ensure it takes the full width */
+  }
+  .post-item .post-image {
+    width: 100%; /* Make the image take up the full width of its container */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 8px; /* Optional: if you want the image to have rounded corners like the container */
+    margin-bottom: 15px; /* Add some space between the image and the rest of the post content */
+  }
+
+  .link-button {
+    padding: 10px 20px;
+    background-color: var(--main);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease-in-out;
+    margin: 10px 0;
+  }
+  
+  .link-button:hover,
+  .link-button:focus {
+    background-color: var(--light);
+  }
+
+  /* Responsive adjustments */
+@media (max-width: 1000px) {
+  .form-container {
+    padding: 20px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .form-container {
+    padding: 15px;
+    max-width: 90%; /* Use more screen width for very small devices */
+  }
+
+}
