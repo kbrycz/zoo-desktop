@@ -1,33 +1,42 @@
-.search-screen {
-    max-width: 500px;
-    margin: 2rem auto;
-    padding: 20px;
-    text-align: center;
-  }
-  
+
   .search-form {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    color: black; /* Ensure all text in the form is black for readability */
   }
   
   .search-form label {
     font-weight: bold;
+    margin-right: 10px;
+    color: black; /* Explicitly setting label color */
   }
   
-  .search-form input {
+  .search-form input,
+  .search-form textarea {
     padding: 10px;
+    margin-right: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin: 10px 10px;
+    color: black; /* Text color for inputs */
+    background-color: #fff; /* Ensuring background is white for contrast */
+    flex: 1; /* Allows inputs to take up remaining space */
+
   }
   
-  .search-form input:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  .search-form input:focus,
+  .search-form textarea:focus {
+    border-color: var(--main);
+    outline: none;
+    box-shadow: 0 0 0 1px var(--main);
   }
   
-  .search-button {
+  .search-form textarea {
+    height: 100px;
+    resize: vertical;
+  }
+  
+  .search-form button {
     padding: 10px 20px;
     background-color: var(--main);
     color: white;
@@ -38,12 +47,39 @@
     transition: background-color 0.2s ease-in-out;
   }
   
-  .search-button:hover,
-  .search-button:focus {
+  .search-form button:hover,
+  .search-form button:focus {
     background-color: var(--light);
   }
+
+  .search-form button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
   
-  .loading-indicator {
-    margin-top: 20px;
+  .loading-indicator p {
+    margin-top: -20px;
+    color: var(--main);
+  }
+  
+  .search-form-container {
+    background-color: var(--background);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 60vh; /* Max height to ensure it's within the viewport */
+    position: relative; /* Needed for centering */
+  }
+  
+  .input-group {
+    display: flex;
+    align-items: center; /* Aligns items vertically in the center */
+    gap: 10px; /* Space between label and input */
+  }
+  
+  .input-group label {
+    min-width: 120px; /* Adjust based on your longest label */
+    text-align: right; /* Aligns text to the right */
   }
   

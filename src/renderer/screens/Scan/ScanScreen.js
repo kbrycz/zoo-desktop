@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import QRScreen from './QRScreen';
 import SearchScreen from './SearchScreen';
 import ProfileScreen from './ProfileScreen'; // Import ProfileScreen
+import '../../styles/Background.css';
 import '../../styles/Scan/Scan.css';
+
 
 function ScanScreen() {
   const [currentScreen, setCurrentScreen] = useState('');
@@ -30,7 +32,7 @@ function ScanScreen() {
         return (
           <>
             <h1>Scan Options</h1>
-            <div className="scan-screen-buttons">
+            <div className="screen-buttons">
               <button onClick={() => setCurrentScreen('qr')}>Scan QR Code</button>
               <button onClick={() => setCurrentScreen('search')}>Search via Name / Number</button>
             </div>
@@ -40,9 +42,14 @@ function ScanScreen() {
   };
 
   return (
-    <div className="scan-screen">
-      {currentScreen !== '' && <button className="back-button" onClick={handleBackClick}></button>}
-      {renderCurrentScreen()}
+    <div className='background-screen'>
+      {currentScreen !== '' && (
+        <button className="back-button" onClick={handleBackClick}>
+          ←
+        </button>
+      )}      <div className="scan-screen">
+        {renderCurrentScreen()}
+      </div>
     </div>
   );
 }

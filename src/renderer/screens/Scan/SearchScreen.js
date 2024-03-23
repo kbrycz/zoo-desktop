@@ -105,43 +105,53 @@ function SearchScreen({onUserFound}) {
 
   return (
     <div className="search-screen">
-      <h1>Search via Name or Phone Number</h1>
-      <form onSubmit={handleSubmit} className="search-form">
-        <div className="name-fields">
-          <label htmlFor="firstName">First:</label>
-          <input
-            id="firstName"
-            type="text"
-            value={firstName}
-            onChange={handleFirstNameChange}
-            placeholder="First Name"
-            disabled={phoneNumber.length > 0}
-          />
-          <label htmlFor="lastName">Last:</label>
-          <input
-            id="lastName"
-            type="text"
-            value={lastName}
-            onChange={handleLastNameChange}
-            placeholder="Last Name"
-            disabled={phoneNumber.length > 0}
-          />
-        </div>
-        <label htmlFor="phoneNumber">Phone Number:</label>
-        <input
-          id="phoneNumber"
-          type="tel"
-          value={formatPhoneNumber(phoneNumber)} // Use the format function for display
-          onChange={handlePhoneNumberChange}
-          placeholder="(123) 456-7890"
-          disabled={firstName.length > 0 || lastName.length > 0}
-        />
-        <button type="submit" className="search-button" disabled={loading || (!lastName && !phoneNumber)}>
-          {loading ? 'Searching...' : 'Search'}
-        </button>
-      </form>
-      {loading && <div className="loading-indicator">Loading...</div>}
+      <h1>Search</h1>
+      <div className='search-form-container'>
+        <form onSubmit={handleSubmit} className="search-form">
+          <div className="input-group">
+            <label htmlFor="firstName">First Name:</label>
+            <input
+              id="firstName"
+              type="text"
+              value={firstName}
+              onChange={handleFirstNameChange}
+              placeholder="First Name"
+              disabled={phoneNumber.length > 0}
+            />
+          </div>
+          <div className="input-group">
+            <label htmlFor="lastName">Last Name:</label>
+            <input
+              id="lastName"
+              type="text"
+              value={lastName}
+              onChange={handleLastNameChange}
+              placeholder="Last Name"
+              disabled={phoneNumber.length > 0}
+            />
+          </div>
+          <h3>Or</h3>
+          <div className="input-group">
+            <label htmlFor="phoneNumber">Phone Number:</label>
+            <input
+              id="phoneNumber"
+              type="tel"
+              value={formatPhoneNumber(phoneNumber)}
+              onChange={handlePhoneNumberChange}
+              placeholder="(123) 456-7890"
+              disabled={firstName.length > 0 || lastName.length > 0}
+            />
+          </div>
+          <button type="submit" className="search-button" disabled={loading || (!lastName && !phoneNumber)}>
+            {loading ? 'Searching...' : 'Search'}
+          </button>
+          {loading && <div className="loading-indicator">
+            <p>Loading...</p>
+            </div>}
+        </form>
+      </div>
     </div>
+
   );
 }
 

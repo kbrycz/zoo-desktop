@@ -53,7 +53,7 @@
 .post-form select:focus {
   border-color: var(--main);
   outline: none;
-  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  box-shadow: 0 0 0 1px var(--main);
 }
 
 .post-form textarea {

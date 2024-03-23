@@ -1,48 +1,15 @@
-/* Scan.css */
 .scan-screen {
-    position: relative;
-    max-width: 500px;
-    margin: 10vh auto 0; /* Consistent top margin with Post.css */
-    padding: 20px;
-    text-align: center;
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 10vh auto; /* Reduced vertical margin for smaller screens */
+  text-align: center;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .scan-screen {
+    margin: 5vh auto; /* Smaller vertical margin */
+    max-width: 90%; /* Increase max-width for better screen utilization */
   }
-  
-  .scan-screen-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 20px; /* Space between buttons as in Post.css */
-  }
-  
-  .scan-screen-buttons button {
-    padding: 10px 20px;
-    background-color: var(--main); /* Assuming var(--main) is defined elsewhere in your styles */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.2s ease-in-out;
-  }
-  
-  .scan-screen-buttons button:hover,
-  .scan-screen-buttons button:focus {
-    background-color: var(--light); /* Assuming var(--light) is defined elsewhere in your styles */
-  }
-  
-  /* Reuse back button styles from Post.css */
-  .scan-screen .back-button {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 24px; /* Larger font size for icon */
-    color: var(--white); /* Same color as your buttons for consistency */
-    z-index: 10; /* Ensure it's above other elements */
-  }
-  
-  .scan-screen .back-button:before {
-    display: inline-block;
-  }
-  
+}
